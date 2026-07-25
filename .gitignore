@@ -1,0 +1,21 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# SQLite database files
+backend/*.db
+backend/*.db-shm
+backend/*.db-wal
+
+# Env files
+.env
+.env.local
+
+# Editor/OS
+.DS_Store
+*.log
+npm-debug.log*
+
+# Claude Code local settings
+.claude/settings.local.json
