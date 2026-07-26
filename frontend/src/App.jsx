@@ -58,7 +58,21 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Contact Book</h1>
+        <div className="brand">
+          <div className="brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" strokeWidth="1.6" />
+              <path d="M9 3v18" stroke="currentColor" strokeWidth="1.6" />
+              <path d="M13 9h4M13 13h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+            </svg>
+          </div>
+          <div>
+            <h1>Contact Book</h1>
+            <p className="brand-subtitle">
+              {loading ? "Loading your contacts…" : `${contacts.length} contact${contacts.length === 1 ? "" : "s"}`}
+            </p>
+          </div>
+        </div>
       </header>
 
       <main>
@@ -72,6 +86,12 @@ export default function App() {
 
         <section className="content">
           <form className="search-bar" onSubmit={handleSearchSubmit}>
+            <span className="search-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.8" />
+                <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+            </span>
             <input
               type="search"
               placeholder="Search contacts..."

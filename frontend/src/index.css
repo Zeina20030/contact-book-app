@@ -1,32 +1,78 @@
 :root {
-  --text: #3f3f46;
-  --text-h: #18181b;
-  --bg: #f9fafb;
-  --card-bg: #ffffff;
-  --border: #e4e4e7;
-  --accent: #4f46e5;
-  --accent-hover: #4338ca;
-  --danger: #dc2626;
-  --danger-hover: #b91c1c;
+  /* Surfaces */
+  --bg: #f3f1f5;
+  --bg-alt: #ece8ee;
+  --surface: #ffffff;
+  --surface-2: #faf8fb;
 
-  font: 15px/1.5 system-ui, "Segoe UI", Roboto, sans-serif;
+  /* Ink */
+  --text: #4a3f4d;
+  --text-h: #241a26;
+  --text-muted: #8d7f91;
+
+  /* Brand accent — deep wine, evokes a leather-bound address book */
+  --accent: #7a2942;
+  --accent-hover: #631f35;
+  --accent-soft: #f3e4e8;
+  --accent-soft-ink: #7a2942;
+
+  /* Secondary accent — warm brass, used sparingly */
+  --gold: #b8863b;
+  --gold-soft: #f6ecd9;
+
+  /* Status */
+  --danger: #b3261e;
+  --danger-hover: #8f1e18;
+  --danger-soft: #fbe9e7;
+  --success: #2f6f4f;
+
+  /* Structure */
+  --border: #e6dfe6;
+  --border-strong: #d8cdd8;
+  --shadow-color: 273 20% 20%;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  font: 15px/1.55 var(--font-body);
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #d4d4d8;
-    --text-h: #f4f4f5;
-    --bg: #18181b;
-    --card-bg: #232326;
-    --border: #33333a;
-    --accent: #818cf8;
-    --accent-hover: #a5b4fc;
-    --danger: #f87171;
-    --danger-hover: #fca5a5;
+    --bg: #1c1620;
+    --bg-alt: #221b26;
+    --surface: #29212e;
+    --surface-2: #241d29;
+
+    --text: #cabecb;
+    --text-h: #f3edf4;
+    --text-muted: #8f7f92;
+
+    --accent: #e08aa3;
+    --accent-hover: #eba5b8;
+    --accent-soft: #3a2530;
+    --accent-soft-ink: #f0aebe;
+
+    --gold: #d8ac67;
+    --gold-soft: #362c1f;
+
+    --danger: #f2887f;
+    --danger-hover: #f6a8a1;
+    --danger-soft: #3a2320;
+    --success: #7fc7a2;
+
+    --border: #3a2f3f;
+    --border-strong: #4a3d50;
+    --shadow-color: 273 40% 2%;
   }
 }
 
@@ -43,9 +89,22 @@ h2,
 h3 {
   color: var(--text-h);
   margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 button {
   font: inherit;
   cursor: pointer;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent-soft-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
